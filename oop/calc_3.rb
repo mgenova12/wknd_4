@@ -24,23 +24,7 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
+class FancyCalculator < SimpleCalculator
 
   def square_root(number)
     Math.sqrt(number)
@@ -48,27 +32,7 @@ class FancyCalculator
 
 end
 
-class WhizBangCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
-  def square_root(number)
-    Math.sqrt(number)
-  end
+class WhizBangCalculator < FancyCalculator
 
   def hypotenuse(first_number, second_number)
     Math.hypot(first_number, second_number)
@@ -83,4 +47,63 @@ class WhizBangCalculator
 end
 
 # Copy your driver code from the previous exercise and more below:
+
+calc = WhizBangCalculator.new
+
+puts "Testing add method"
+if calc.add(2,3) == 5 
+  puts "PASS"
+else 
+  puts "Fail"
+end
+puts 
+
+puts "Testing subtract method"
+if calc.subtract(6,3) == 3 
+  puts "PASS"
+else 
+  puts "Fail"
+end
+puts 
+
+puts "Testing multiply method"
+if calc.multiply(2,3) == 6 
+  puts "PASS"
+else 
+  puts "Fail"
+end
+puts 
+
+puts "Testing divide method"
+if calc.divide(12,6) == 2 
+  puts "PASS"
+else 
+  puts "Fail"
+end
+puts 
+
+puts "Testing square_root method"
+if calc.square_root(144) == 12 
+  puts "PASS"
+else 
+  puts "Fail"
+end
+puts 
+
+puts "Testing hypotenuse method"
+if calc.hypotenuse(3,4) == 5 
+  puts "PASS"
+else 
+  puts "Fail"
+end
+puts 
+
+puts "Testing exponent method"
+if calc.exponent(2,3) == 8 
+  puts "PASS"
+else 
+  puts "Fail"
+end
+puts 
+
 
